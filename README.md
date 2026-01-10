@@ -1,16 +1,14 @@
-# simple-card
-A clean and interactive profile card built using HTML and CSS with hover animations and smooth transitions.
-# Social Links Profile Card
+# Simple Card
 
 A clean and interactive profile card built using **HTML and CSS**, featuring smooth hover animations and transitions.
 
-This project focuses on improving UI design skills using pure CSS without any frameworks or libraries.
+This project is designed to practice modern UI design concepts using pure CSS without any frameworks or libraries.
 
 ---
 
 ## 🚀 Live Demo
 
-🔗 https://golu-dhama.github.io/social-links-profile-card/
+🔗 https://golu-dhama.github.io/simple-card/
 
 ---
 
@@ -19,20 +17,50 @@ This project focuses on improving UI design skills using pure CSS without any fr
 - HTML5  
 - CSS3  
 - Flexbox  
-- CSS Transitions & Hover Effects  
+- CSS Transitions  
+- Hover Animations  
 
 ---
 
 ## ✨ Features
 
-- Clean and minimal UI  
-- Smooth hover animations  
-- Profile image interaction  
-- Button hover effects  
-- Fully responsive card layout  
+- Clean and minimal profile card UI  
+- Smooth hover and scale animations  
+- Interactive profile image effect  
+- Button hover transitions  
+- Centered card layout using Flexbox  
 
 ---
 
-## Preview
+## 📁 Project Structure
 
-![Project Preview](preview.png)
+simple-card/
+│
+├── index.html
+├── style.css
+├── preview.jpg
+└── README.md
+
+
+---
+
+## 🖼️ Preview
+
+![Project Preview](preview.jpg)
+
+---
+
+## 📌 Purpose of This Project
+
+- Improve CSS animation and hover skills  
+- Practice Flexbox layout  
+- Build visually appealing UI components  
+- Strengthen frontend fundamentals  
+
+---
+
+## 📬 Feedback
+
+If you have any suggestions or improvements, feel free to open an issue or connect with me on GitHub.
+
+Happy Coding 🚀
