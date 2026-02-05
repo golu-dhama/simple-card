@@ -36,7 +36,7 @@ This project is designed to practice modern UI design concepts using pure CSS wi
 
 ## 🖼️ Preview
 
-![Project Preview](preview.png)
+![Project Preview](images/preview.png)
 
 ---
 
