@@ -1,20 +1,51 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Card</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love 💖</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-    <div class="card">
-      <img class="image"src="https://www.shutterstock.com/image-photo/passport-photo-portrait-woman-on-260nw-2438031869.jpg" alt="a boy">
-      <h2 class="name">Jahnvi Sharma</h2>
-      <p class="role">Frontend Developer</p>
-      <p class="text">I love building clean and responsive <br>user interfaces using HTML and <br>CSS.</p>
-        <button>Follow</button>
-    </div>
+<body>
 
-  </body>
-  </html>
+<div class="hearts"></div>
+
+<div class="border-wrapper">
+  <div class="card">
+
+  <div class="profile-area">
+    <img class="profile-img" src="https://www.shutterstock.com/image-photo/passport-photo-portrait-woman-on-260nw-2438031869.jpg">
+  </div>
+
+  <h2 class="name"></h2>
+
+  <p class="nickname">My Cutie Pie 💕</p>
+
+  <p class="text">
+    You are the most beautiful part of my life.  
+    Your smile makes my day brighter ✨
+  </p>
+
+  <div class="slider">
+  <button onclick="prevImage()">◀</button>
+
+  <img id="memory" src="images/image-1.jpg">
+
+  <button onclick="nextImage()">▶</button>
+</div>
+
+
+  <button class="btn" onclick="playMusic()">Play Our Song 🎵</button>
+
+</div>
+</div>
+
+<audio id="song">
+  <source src="output_audio.wav" type="audio/mpeg">
+</audio>
+
+<script src="logic.js"></script>
+
+</body>
+</html>
