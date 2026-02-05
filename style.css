@@ -1,102 +1,262 @@
-/* ===== BODY CENTER ALIGNMENT ===== */
-body {
+*{
   margin: 0;
-  background: lightblue;
+  box-sizing: border-box;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+body{
+  /* background: linear-gradient(to bottom, #ffafbd, #ffc3a0); */
+  background-color: #5cba5ccc;
+  min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
+  font-family: Arial;
+
+  padding: 40px 10px;
+
+  perspective: 1200px;
 }
 
-/* ===== CARD BASE ===== */
-.card {
-  width: 300px;
+/* ===== BORDER WRAPPER ===== */
+
+.border-wrapper{
+  position: relative;
+  border-radius: 30px;
+
+  padding: 5px;
+
+  background-image: conic-gradient(from var(--angle),transparent 70%, red, blue,green);
+
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+/* ===== MAIN CARD ===== */
+
+.card{
+  width: 380px;
+
+  background: rgba(255, 250, 250);
+  /* background: #c7e4c7; */
+
+  border-radius: 27px;
+
+  position: relative;
+
   display: flex;
-  background-color: white;
-  border-radius: 20px;
-  padding: 24px;
   flex-direction: column;
   align-items: center;
-  transition: all 0.3s ease;
-  overflow: hidden; /* image bahar na nikle */
+
+  padding-top: 100px;
+  padding-bottom: 18px;
+
+  gap: 8px;
+
+  transform-style: preserve-3d;
+  transition: 0.5s ease;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* ===== IMAGE ===== */
-img {
-  height: 150px;
-  width: 150px;
+/* ===== PROFILE IMAGE FIX ===== */
+
+.profile-area{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  margin-top: -90px;
+
+  transform: translateZ(50px);
+}
+
+.profile-img{
+  width: 170px;
+  height: 170px;
+
   border-radius: 50%;
-  border: 5px solid greenyellow;
-  transition: 0.3s ease;
+  border: 6px solid white;
+
+  box-shadow: 0 15px 40px rgba(255, 0, 149, 0.266);
+
+  transition: 0.4s;
 }
 
-.image:hover {
-  transform: scale(1.2);
-  border: 4px solid white;
+/* ===== TEXT STYLES ===== */
+
+.name{
+  font-size: 2.1rem;
+  color: #ff4081;
+
+  padding: 8px 18px;
+
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+
+  border-radius: 50px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  transform: translateZ(35px);
 }
 
-/* ===== NAME ===== */
-.name {
-  margin-bottom: 6px;
-  transition: all 0.3s ease;
-}
-
-/* ===== ROLE ===== */
-.role {
-  margin-top: 0;
+.nickname{
   font-size: 18px;
-  color: #7b879d;
+  color: #ff6f91;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  transform: translateZ(30px);
 }
 
-/* ===== TEXT ===== */
-.text {
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #7b879d;
+.text{
+  color: #444;
   text-align: center;
-  max-width: 260px;
-  margin: 12px 0;
-  transition: 0.5s;
+  padding: 0 25px;
+  line-height: 1.6;
+  font-size: 15px;
+
+  max-width: 320px;
+
+  transform: translateZ(25px);
+}
+
+/* ===== SLIDER FIX ===== */
+
+
+.slider img{
+  width: 220px;
+  height: 260px;      /* 200px se approx 30% jada */
+
+  object-fit: cover;
+
+  border-radius: 15px;
+
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+
+  transition: opacity 0.6s ease, transform 0.5s;
 }
 
 /* ===== BUTTON ===== */
-button {
-  background-color: blue;
+
+.btn{
+  margin-top: 12px;
+
+  padding: 12px 40px;
+  font-size: 17px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: linear-gradient(45deg, #ff4081, #ff80ab);
+
   color: white;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(255,64,129,0.5);
+
+  transition: all 0.4s ease;
+
+  transform: translateZ(30px);
+}
+
+.btn:hover{
+  transform: translateZ(40px) scale(1.08);
+}
+
+/* ===== HEART ANIMATION BACKGROUND ===== */
+
+.hearts{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hearts::before{
+  content: "💖 💗 💕 💞 💓 💘 💝";
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);   /* CENTER ME LANE KE LIYE */
+
+  font-size: 28px;
+  animation: floatHearts 10s linear infinite;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+
+@keyframes floatHearts{
+  0%{
+    transform: translateX(-50%) translateY(100vh);
+  }
+  100%{
+    transform: translateX(-50%) translateY(-100vh);
+  }
+}
+
+
+
+.hearts::after{
+  content: "💗 💕 💞 💓 💘 💝 💖";
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
   font-size: 22px;
-  padding: 12px 48px;
-  border-radius: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  transition: 1s;
+  animation: floatHeartsReverse 12s linear infinite;
+  opacity: 0.6;
 }
 
-/* Button hover same rakha */
-button:hover {
-  background-color: green;
-  transform: scale(1.5);
+@keyframes floatHeartsReverse{
+  0%{
+    transform: translateX(-50%) translateY(100vh);
+  }
+  100%{
+    transform: translateX(-50%) translateY(-100vh);
+  }
 }
 
-/* ===== CARD HOVER EFFECT ===== */
-.card:hover {
-  transform: translateY(-8px) scale(1.2);
-  background: linear-gradient(45deg, green, yellow);
-  box-shadow: 10px 10px 120px red;
+.slider{
+  margin-top: 10px;
+  transform: translateZ(20px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Card hover par text color change */
-.card:hover .text {
-  color: aqua;
-  font-weight: bolder;
-}
-
-.card:hover .role {
-  color: red;
-  line-height: 4px;
-  margin-top: 5px;
-}
-
-.card:hover .name {
-  color: white;
-  box-shadow: 15px 15px 50px white;
+.slider button{
+  background: pink;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
