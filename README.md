@@ -32,16 +32,6 @@ This project is designed to practice modern UI design concepts using pure CSS wi
 
 ---
 
-## 📁 Project Structure
-
-simple-card/
-│
-├── index.html
-├── style.css
-├── preview.jpg
-└── README.md
-
-
 ---
 
 ## 🖼️ Preview
